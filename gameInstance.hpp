@@ -10,6 +10,7 @@
 
 #include "Game.hpp"
 #include "saveData.hpp"
+#include "Graphics.hpp"
 
 class gameInstance {
 public:
@@ -40,7 +41,7 @@ public:
     }
 
     // Return 0 if instance is quit, otherwise continue
-    int runGameInstance(sf::RenderWindow &window);
+    int runGameInstance(sf::RenderWindow &window, Graphics &graphicsHandler);
 
 private:
     bool isNewSave;

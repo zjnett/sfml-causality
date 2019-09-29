@@ -6,14 +6,15 @@
  ******************************************/
 
 #include "Game.hpp"
+#include "Graphics.hpp"
 #include "mainMenu.hpp"
 #include "gameInstance.hpp"
 
 int main(void) {
     sf::RenderWindow window(sf::VideoMode(HORIZONTAL_RESOLUTION, VERTICAL_RESOLUTION), "Causality");
     window.setFramerateLimit(FIXED_FRAMERATE);
-    sf::Clock timer;
     mainMenu menu;
+    Graphics graphicsHandler;
     gameInstance game;
     menu.setButtonSelected(1); // Ensure cursor is on 'new game' initially
     bool isMenuRunning = true;
@@ -26,27 +27,23 @@ int main(void) {
         }
 
         if (isMenuRunning) {
-            int instruction = menu.runMainMenu(window);
+            int instruction = menu.runMainMenu(window, graphicsHandler);
             switch (instruction) {
                 case NEW_GAME:
                     isMenuRunning = false;
                     break;
-
                 case LOAD_GAME:
                     isMenuRunning = false;
                     break;
-
                 case EXIT:
                     window.close();
-
                 case CONTINUE:
                     break;
-
                 default: // continue
                     break;
             }
         } else { // Run game instance
-            if (!game.runGameInstance(window))
+            if (!game.runGameInstance(window, graphicsHandler))
                 window.close();
         }
     }

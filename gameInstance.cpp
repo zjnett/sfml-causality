@@ -7,7 +7,7 @@
 
 #include "gameInstance.hpp"
 
-int gameInstance::runGameInstance(sf::RenderWindow &window) {
+int gameInstance::runGameInstance(sf::RenderWindow &window, Graphics &graphicsHandler) {
     window.clear();
     if (isNewSave) {
         

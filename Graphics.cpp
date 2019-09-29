@@ -14,7 +14,7 @@ int Graphics::fadeInAnimation(sf::RenderWindow &window, double duration) {
 }
 
 int Graphics::fadeInAnimation(sf::RenderWindow &window, int alphaStart, int alphaEnd, double duration) {
-    // Sketch: static counter (persistent between calls) that changes color
+    // Sketch: static counter (persistent between calls) that changes color/alpha of rect
     if (animateReady) {
         static double opacity;
         double changesPerSecond = (alphaEnd - alphaStart + 1) / duration;
@@ -24,8 +24,7 @@ int Graphics::fadeInAnimation(sf::RenderWindow &window, int alphaStart, int alph
             screenRect.setFillColor(*(new sf::Color(0, 0, 0, opacity)));
             window.draw(screenRect);
         } else {
-            //opacity = 0;
-            // TODO: loop gets stuck here after animation complete -- make more efficient?
+            opacity = 0;
             return 1;
         }
     }

@@ -6,9 +6,8 @@
  ******************************************/
 
 #include "mainMenu.hpp"
-#include "Graphics.hpp"
 
-int mainMenu::runMainMenu(sf::RenderWindow &window) {
+int mainMenu::runMainMenu(sf::RenderWindow &window, Graphics &graphicsHandler) {
     // Instantiate and load font from file
     sf::Font sysfont;
     sysfont.loadFromFile("assets/fonts/Pelagiad.ttf");
@@ -95,7 +94,6 @@ int mainMenu::runMainMenu(sf::RenderWindow &window) {
             break;
     }
 
-    Graphics graphicsHandler;
     // Window clear, object display hierarchy, display command
     window.clear();
     window.draw(logo);
@@ -103,7 +101,7 @@ int mainMenu::runMainMenu(sf::RenderWindow &window) {
     window.draw(loadGame);
     window.draw(exitGame);
     if (graphicsHandler.getAnimateReady()) { // if ready for animation
-        if (graphicsHandler.fadeInAnimation(window, 0, 255, 5))
+        if (graphicsHandler.fadeInAnimation(window, 0, 255, 2))
             graphicsHandler.stopAnimation(window);
     }
     window.display();

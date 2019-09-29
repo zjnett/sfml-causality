@@ -9,6 +9,7 @@
 #define MAIN_MENU_HPP
 
 #include "Game.hpp"
+#include "Graphics.hpp"
 
 #define VERT_BUTTON_SPACING 1.5
 
@@ -20,7 +21,7 @@ public:
         buttonSelected = 1;
     }
     ~mainMenu() {}
-    int runMainMenu(sf::RenderWindow &window);
+    int runMainMenu(sf::RenderWindow &window, Graphics &graphicsHandler);
 
     // Button selected getter
     int getButtonSelected() {
