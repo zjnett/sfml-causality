@@ -21,6 +21,9 @@ public:
         buttonSelected = 1;
     }
     ~mainMenu() {}
+
+    void instantiateMenuObjects();
+
     int runMainMenu(sf::RenderWindow &window, Graphics &graphicsHandler);
 
     // Button selected getter
@@ -34,6 +37,9 @@ public:
 
 private:
     int buttonSelected;
+    sf::Font sysfont;
+    sf::Sound uiInteract;
+    sf::SoundBuffer buffer;
 };
 
 #endif /* MAIN_MENU_HPP */

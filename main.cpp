@@ -21,6 +21,7 @@ int main(void) {
     gameInstance game;
 
     // Menu control parameters
+    menu.instantiateMenuObjects();
     menu.setButtonSelected(1); // Ensure cursor is on 'new game' initially
     bool isMenuRunning = true;
 

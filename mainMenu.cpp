@@ -8,10 +8,6 @@
 #include "mainMenu.hpp"
 
 int mainMenu::runMainMenu(sf::RenderWindow &window, Graphics &graphicsHandler) {
-    // Instantiate and load font from file
-    sf::Font sysfont;
-    sysfont.loadFromFile("assets/fonts/Pelagiad.ttf");
-    
     // Create logo object and set properties
     sf::Text logo("Causality", sysfont);
     logo.setCharacterSize(250);
@@ -107,4 +103,14 @@ int mainMenu::runMainMenu(sf::RenderWindow &window, Graphics &graphicsHandler) {
     window.display();
 
     return CONTINUE;
+}
+
+void mainMenu::instantiateMenuObjects() {
+    // Instantiate and load font from file
+    sysfont.loadFromFile("assets/fonts/Pelagiad.ttf");
+    
+    // Instantiate and load UI interact SFX from file
+    buffer.loadFromFile("assets/sfx/uioption.wav");
+    uiInteract.setBuffer(buffer);
+    uiInteract.setLoop(true);
 }
