@@ -10,7 +10,8 @@
 void mainMenu::runMainMenu(sf::RenderWindow &window) {
     // Instantiate and load font from file
     sf::Font sysfont;
-    sysfont.loadFromFile("src/fonts/Pelagiad.ttf");
+    sysfont.loadFromFile("assets/fonts/Pelagiad.ttf");
+    
 
     // Create logo object and set properties
     sf::Text logo("Causality", sysfont);
