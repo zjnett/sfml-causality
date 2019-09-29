@@ -9,5 +9,8 @@
 
 int gameInstance::runGameInstance(sf::RenderWindow &window) {
     window.clear();
+    if (isNewSave) {
+        
+    }
     return 1;
 }

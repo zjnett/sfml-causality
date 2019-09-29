@@ -10,7 +10,9 @@
 #include "gameInstance.hpp"
 
 int main(void) {
-    sf::RenderWindow window(sf::VideoMode(1920, 1080), "Causality");
+    sf::RenderWindow window(sf::VideoMode(HORIZONTAL_RESOLUTION, VERTICAL_RESOLUTION), "Causality");
+    window.setFramerateLimit(FIXED_FRAMERATE);
+    sf::Clock timer;
     mainMenu menu;
     gameInstance game;
     menu.setButtonSelected(1); // Ensure cursor is on 'new game' initially
@@ -43,7 +45,7 @@ int main(void) {
                 default: // continue
                     break;
             }
-        } else {
+        } else { // Run game instance
             if (!game.runGameInstance(window))
                 window.close();
         }

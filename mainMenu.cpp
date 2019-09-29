@@ -6,6 +6,7 @@
  ******************************************/
 
 #include "mainMenu.hpp"
+#include "Graphics.hpp"
 
 int mainMenu::runMainMenu(sf::RenderWindow &window) {
     // Instantiate and load font from file
@@ -94,12 +95,17 @@ int mainMenu::runMainMenu(sf::RenderWindow &window) {
             break;
     }
 
+    Graphics graphicsHandler;
     // Window clear, object display hierarchy, display command
     window.clear();
     window.draw(logo);
     window.draw(newGame);
     window.draw(loadGame);
     window.draw(exitGame);
+    if (graphicsHandler.getAnimateReady()) { // if ready for animation
+        if (graphicsHandler.fadeInAnimation(window, 0, 255, 2))
+            graphicsHandler.stopAnimation(window);
+    }
     window.display();
 
     return CONTINUE;

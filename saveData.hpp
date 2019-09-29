@@ -14,6 +14,8 @@ class saveData {
 public:
     saveData() {}
     ~saveData() {}
+private:
+    std::string characterName;
 };
 
 #endif /* SAVE_DATA_HPP */

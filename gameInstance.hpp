@@ -30,11 +30,21 @@ public:
         isNewSave = value;
     }
 
+    // saveData getter
+    saveData getSaveData() {
+        return save;
+    }
+
+    void setSaveData(saveData &value) {
+        save = value;
+    }
+
     // Return 0 if instance is quit, otherwise continue
     int runGameInstance(sf::RenderWindow &window);
 
 private:
     bool isNewSave;
+    saveData save;
 };
 
 #endif /* GAME_INSTANCE_HPP */
