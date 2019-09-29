@@ -15,3 +15,6 @@ Graphics.o : Graphics.hpp
 
 clean:
 	$(RM) causality $(OBJS)
+
+rm-o:
+	$(RM) $(OBJS)
