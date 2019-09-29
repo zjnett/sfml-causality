@@ -12,6 +12,8 @@
 
 #define VERT_BUTTON_SPACING 1.5
 
+enum instruction { EXIT, NEW_GAME, LOAD_GAME, CONTINUE };
+
 class mainMenu {
 public:
     mainMenu() {

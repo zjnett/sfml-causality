@@ -8,5 +8,6 @@
 #include "gameInstance.hpp"
 
 int gameInstance::runGameInstance(sf::RenderWindow &window) {
-    return 0;
+    window.clear();
+    return 1;
 }
