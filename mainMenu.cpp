@@ -6,6 +6,7 @@
  ******************************************/
 
 #include "mainMenu.hpp"
+#include "gameInstance.hpp"
 
 int mainMenu::runMainMenu(sf::RenderWindow &window) {
     // Instantiate and load font from file
@@ -70,13 +71,14 @@ int mainMenu::runMainMenu(sf::RenderWindow &window) {
         case 1: // New Game
             newGame.setFillColor(sf::Color::Yellow);
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
-
+                gameInstance game;
+                return game.runGameInstance(window);
             }
             break;
         case 2: // Load Game
             loadGame.setFillColor(sf::Color::Yellow);
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
-                
+                // TODO: load game screen
             }
             break;
         case 3: // Exit
