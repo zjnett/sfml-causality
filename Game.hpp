@@ -9,6 +9,7 @@
 #define GAME_HPP
 
 #include <iostream>
+#include <cmath>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 

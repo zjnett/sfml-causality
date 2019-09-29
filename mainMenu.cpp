@@ -103,7 +103,7 @@ int mainMenu::runMainMenu(sf::RenderWindow &window) {
     window.draw(loadGame);
     window.draw(exitGame);
     if (graphicsHandler.getAnimateReady()) { // if ready for animation
-        if (graphicsHandler.fadeInAnimation(window, 0, 255, 2))
+        if (graphicsHandler.fadeInAnimation(window, 0, 255, 5))
             graphicsHandler.stopAnimation(window);
     }
     window.display();
