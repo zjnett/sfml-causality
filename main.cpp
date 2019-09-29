@@ -11,11 +11,16 @@
 #include "gameInstance.hpp"
 
 int main(void) {
+    // Open window and set initial options
     sf::RenderWindow window(sf::VideoMode(HORIZONTAL_RESOLUTION, VERTICAL_RESOLUTION), "Causality");
     window.setFramerateLimit(FIXED_FRAMERATE);
+
+    // Custom object declaration
     mainMenu menu;
     Graphics graphicsHandler;
     gameInstance game;
+
+    // Menu control parameters
     menu.setButtonSelected(1); // Ensure cursor is on 'new game' initially
     bool isMenuRunning = true;
 
