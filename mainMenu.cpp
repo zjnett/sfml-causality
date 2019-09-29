@@ -7,7 +7,7 @@
 
 #include "mainMenu.hpp"
 
-void mainMenu::runMainMenu(sf::RenderWindow &window) {
+int mainMenu::runMainMenu(sf::RenderWindow &window) {
     // Instantiate and load font from file
     sf::Font sysfont;
     sysfont.loadFromFile("assets/fonts/Pelagiad.ttf");
@@ -69,12 +69,21 @@ void mainMenu::runMainMenu(sf::RenderWindow &window) {
     switch (this->getButtonSelected()) {
         case 1: // New Game
             newGame.setFillColor(sf::Color::Yellow);
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
+
+            }
             break;
         case 2: // Load Game
             loadGame.setFillColor(sf::Color::Yellow);
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
+                
+            }
             break;
         case 3: // Exit
             exitGame.setFillColor(sf::Color::Yellow);
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
+                return 0;
+            }
             break;
         default:
             break;
@@ -87,4 +96,5 @@ void mainMenu::runMainMenu(sf::RenderWindow &window) {
     window.draw(loadGame);
     window.draw(exitGame);
     window.display();
+    return 1;
 }

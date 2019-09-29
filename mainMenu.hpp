@@ -18,7 +18,7 @@ public:
         buttonSelected = 1;
     }
     ~mainMenu() {}
-    void runMainMenu(sf::RenderWindow &window);
+    int runMainMenu(sf::RenderWindow &window);
 
     // Button selected getter
     int getButtonSelected() {
