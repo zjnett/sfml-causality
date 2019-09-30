@@ -1,4 +1,3 @@
-
 # sfml-causality
 A platformer-RPG with consequence.
 
