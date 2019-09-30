@@ -9,9 +9,6 @@
 
 int gameInstance::runGameInstance(sf::RenderWindow &window, Graphics &graphicsHandler, Audio &audioHandler) {
     window.clear();
-    if (isNewSave) {
-        // run save creation
-
-    }
+    audioHandler.fadeOutMusic(100);
     return 1;
 }

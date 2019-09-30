@@ -12,16 +12,18 @@
 
 class Audio {
 public:
-    Audio() {}
+    Audio() { volume = 100; }
     ~Audio() {}
     int playSFX(std::string &filepath);
     void stopSFX();
     int playMusic(std::string &filepath);
     void stopMusic();
+    void fadeOutMusic(double duration);
 private:
     sf::SoundBuffer gameSoundBuffer;
     sf::Sound sfx;
     sf::Music gameMusic;
+    double volume; // 0-100
 };
 
 #endif /* AUDIO_HPP */
