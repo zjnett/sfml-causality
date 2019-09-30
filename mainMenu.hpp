@@ -10,6 +10,7 @@
 
 #include "Game.hpp"
 #include "Graphics.hpp"
+#include "Audio.hpp"
 
 #define VERT_BUTTON_SPACING 1.5
 
@@ -24,7 +25,7 @@ public:
 
     void instantiateMenuObjects();
 
-    int runMainMenu(sf::RenderWindow &window, Graphics &graphicsHandler);
+    int runMainMenu(sf::RenderWindow &window, Graphics &graphicsHandler, Audio &audioHandler);
 
     // Button selected getter
     int getButtonSelected() {

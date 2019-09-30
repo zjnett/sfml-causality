@@ -7,6 +7,7 @@
 
 #include "Game.hpp"
 #include "Graphics.hpp"
+#include "Audio.hpp"
 #include "mainMenu.hpp"
 #include "gameInstance.hpp"
 
@@ -19,6 +20,9 @@ int main(void) {
     mainMenu menu;
     Graphics graphicsHandler;
     gameInstance game;
+    Audio audioHandler;
+    std::string str = "assets/sfx/music.wav";
+    audioHandler.playMusic(str);
 
     // Menu control parameters
     menu.instantiateMenuObjects();
@@ -33,7 +37,7 @@ int main(void) {
         }
 
         if (isMenuRunning) {
-            int instruction = menu.runMainMenu(window, graphicsHandler);
+            int instruction = menu.runMainMenu(window, graphicsHandler, audioHandler);
             switch (instruction) {
                 case NEW_GAME:
                     isMenuRunning = false;
@@ -49,7 +53,7 @@ int main(void) {
                     break;
             }
         } else { // Run game instance
-            if (!game.runGameInstance(window, graphicsHandler))
+            if (!game.runGameInstance(window, graphicsHandler, audioHandler))
                 window.close();
         }
     }

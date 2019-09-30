@@ -18,7 +18,7 @@ int Graphics::fadeInAnimation(sf::RenderWindow &window, int alphaStart, int alph
     if (animateReady) {
         static double opacity;
         double changesPerSecond = (alphaEnd - alphaStart + 1) / duration;
-
+        
         if (std::abs(opacity) < alphaEnd) {
             opacity -= std::ceil((changesPerSecond / FIXED_FRAMERATE));
             screenRect.setFillColor(*(new sf::Color(0, 0, 0, opacity)));

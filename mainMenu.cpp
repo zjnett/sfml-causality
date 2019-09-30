@@ -7,7 +7,7 @@
 
 #include "mainMenu.hpp"
 
-int mainMenu::runMainMenu(sf::RenderWindow &window, Graphics &graphicsHandler) {
+int mainMenu::runMainMenu(sf::RenderWindow &window, Graphics &graphicsHandler, Audio &audioHandler) {
     // Create logo object and set properties
     sf::Text logo("Causality", sysfont);
     logo.setCharacterSize(250);
@@ -45,7 +45,9 @@ int mainMenu::runMainMenu(sf::RenderWindow &window, Graphics &graphicsHandler) {
     static sf::Clock timer; // static persistent timer
 
     if (timer.getElapsedTime().asSeconds() > 0.25f) { // Only reads button change every 0.25s
+        std::string str = "assets/sfx/uioption.wav";
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+            audioHandler.playSFX(str);
             if (buttonSelected != 3) {
                 this->setButtonSelected(++buttonSelected);
             } else {
@@ -53,6 +55,7 @@ int mainMenu::runMainMenu(sf::RenderWindow &window, Graphics &graphicsHandler) {
             }
             timer.restart();
         } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+            audioHandler.playSFX(str);
             if (buttonSelected != 1) {
                 this->setButtonSelected(--buttonSelected);
             } else {
