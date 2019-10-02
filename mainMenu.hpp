@@ -33,7 +33,12 @@ public:
     }
 
     void setButtonSelected(int newSelection) {
-        buttonSelected = newSelection;
+        if (newSelection < 1)
+            buttonSelected = 1;
+        else if (newSelection > 3)
+            buttonSelected = 3;
+        else
+            buttonSelected = newSelection;
     }
 
 private:
