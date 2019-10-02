@@ -9,6 +9,7 @@
 #define GAME_INSTANCE_HPP
 
 #include "Game.hpp"
+#include "Player.hpp"
 #include "saveData.hpp"
 #include "Graphics.hpp"
 #include "Audio.hpp"
@@ -16,7 +17,14 @@
 class gameInstance {
 public:
     gameInstance() {
+        // Default game instance, no passed in save data
         isNewSave = true;
+
+        // Construct default player (prior to character creation)
+        pc.setName("Default");
+        pc.setHealth(10, 10);
+        pc.setStamina(10, 10);
+        pc.setMagic(0, 0); // player does not initially have magic
     }
     // TODO: constructor with pre-existing save data
     gameInstance(saveData &save) {}
@@ -49,6 +57,7 @@ public:
 private:
     bool isNewSave;
     saveData save;
+    Player pc;
 };
 
 #endif /* GAME_INSTANCE_HPP */

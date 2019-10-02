@@ -6,6 +6,7 @@
  ******************************************/
 
 #include "Game.hpp"
+#include "Player.hpp"
 #include "Graphics.hpp"
 #include "Audio.hpp"
 #include "mainMenu.hpp"

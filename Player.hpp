@@ -10,15 +10,25 @@
 
 #include "Game.hpp"
 
-class Player {
+class Player : public sf::RectangleShape { // inherits from rectangle shape due to sprite/hitbox
 public:
-    Player();
-    ~Player();
+    Player() {}
+    ~Player() {}
+
+    // Attribute/stat setters
     void setName(std::string &newName) { name = newName; }
-    void setName(const char[] newName) {
+    void setName(const char *newName) {
         std::string temp = newName;
         name = temp;
     }
+    void setHealth(double health) { currentHealth = health; }
+    void setHealth(double health, double newHealthMax) { currentHealth = health; healthMax = newHealthMax; }
+    void setStamina(double stamina) { currentStamina = stamina; }
+    void setStamina(double stamina, double newStaminaMax) { currentStamina = stamina; staminaMax = newStaminaMax; }
+    void setMagic(double magic) { currentMagic = magic; }
+    void setMagic(double magic, double newMagicMax) { currentMagic = magic; magicMax = newMagicMax; }
+
+    // Attribute getters
     std::string getName() { return name; }
     double getHealthMax() { return healthMax; }
     double getStaminaMax() { return staminaMax; }
