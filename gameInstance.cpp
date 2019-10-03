@@ -9,15 +9,20 @@
 
 int gameInstance::runGameInstance(sf::RenderWindow &window, Graphics &graphicsHandler, Audio &audioHandler) {
     window.clear();
-    //audioHandler.fadeOutMusic(100);
-
+    // at start of frame, check if player's animation needs to change
+    sf::Texture temp;
+    temp = graphicsHandler.getTextureInArray(0);
+    pc.setTexture(&temp);
     // TODO:
-    // * Have player object & draw on screen
+    // * Have player object & draw on screen - DONE
     // * Player object controllable
     // * Player cannot leave window bounds
     // * Camera system to track player
     // * Implement physics system
     // * Tileset drawing & collision
 
+
+    window.draw(this->pc);
+    window.display();
     return 1;
 }

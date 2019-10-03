@@ -20,6 +20,7 @@ int main(void) {
     // Custom object declaration
     mainMenu menu;
     Graphics graphicsHandler;
+    graphicsHandler.setTextureInArray(0, "assets/textures/player/adventurer-idle-00.png");
     gameInstance game;
     Audio audioHandler;
     std::string str = "assets/sfx/music.wav";

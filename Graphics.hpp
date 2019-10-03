@@ -44,9 +44,26 @@ public:
     void setAnimateReady(bool status) {
         animateReady = status;
     }
+
+    int setTextureInArray(int index, std::string filepath) {
+        if(!textures[index].loadFromFile(filepath))
+            return 0;
+        return 1;
+    }
+
+    int setTextureInArray(int index, const char *filepath) {
+        std::string temp = filepath;
+        if(!textures[index].loadFromFile(temp))
+            return 0;
+        return 1;
+    }
+
+    sf::Texture getTextureInArray(int index) { return textures[index]; }
+
 private:
     bool animateReady;
     sf::RectangleShape screenRect;
+    sf::Texture textures[100]; // persistent texture pointers for lifetime of program
 };
 
 #endif /* GRAPHICS_HPP */

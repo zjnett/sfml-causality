@@ -12,7 +12,16 @@
 
 class Player : public sf::RectangleShape { // inherits from rectangle shape due to sprite/hitbox
 public:
-    Player() {}
+    Player() {
+        /*setName("Default");
+        setHealth(10, 10);
+        setStamina(10, 10);
+        setMagic(0, 0); // player does not initially have magic
+        sf::Vector2f temp(50, 50);
+        setSize(temp);
+        setFillColor(sf::Color::White);
+        setPosition(10, 10);*/
+    }
     ~Player() {}
 
     // Attribute/stat setters
