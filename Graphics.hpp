@@ -45,6 +45,14 @@ public:
         animateReady = status;
     }
 
+    void setPlayerSpriteSheet(sf::Texture newSheet) {
+        playerSpriteSheet = newSheet;
+    }
+
+    sf::Texture getPlayerSpriteSheet() {
+        return playerSpriteSheet;
+    }
+
     int setTextureInArray(int index, std::string filepath) {
         if(!textures[index].loadFromFile(filepath))
             return 0;
@@ -63,6 +71,7 @@ public:
 private:
     bool animateReady;
     sf::RectangleShape screenRect;
+    sf::Texture playerSpriteSheet;
     sf::Texture textures[100]; // persistent texture pointers for lifetime of program
 };
 

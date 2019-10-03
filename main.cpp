@@ -20,6 +20,9 @@ int main(void) {
     // Custom object declaration
     mainMenu menu;
     Graphics graphicsHandler;
+    sf::Texture spritesheet;
+    spritesheet.loadFromFile("assets/textures/player/adventurer-v1.5-Sheet.png"); // individual sprites are 50x37, 5 pixel gap
+    graphicsHandler.setPlayerSpriteSheet(spritesheet);
     graphicsHandler.setTextureInArray(0, "assets/textures/player/adventurer-idle-00.png");
     gameInstance game;
     Audio audioHandler;

@@ -11,8 +11,10 @@ int gameInstance::runGameInstance(sf::RenderWindow &window, Graphics &graphicsHa
     window.clear();
     // at start of frame, check if player's animation needs to change
     sf::Texture playerTex;
-    playerTex = graphicsHandler.getTextureInArray(0);
+    //playerTex = graphicsHandler.getTextureInArray(0);
+    playerTex = graphicsHandler.getPlayerSpriteSheet();
     pc.setTexture(&playerTex);
+    pc.setTextureRect(sf::IntRect(0, 0, 50, 37)); // LTRB
 
     handlePlayerMovement(pc);
     // TODO:
