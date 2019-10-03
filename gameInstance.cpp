@@ -10,9 +10,11 @@
 int gameInstance::runGameInstance(sf::RenderWindow &window, Graphics &graphicsHandler, Audio &audioHandler) {
     window.clear();
     // at start of frame, check if player's animation needs to change
-    sf::Texture temp;
-    temp = graphicsHandler.getTextureInArray(0);
-    pc.setTexture(&temp);
+    sf::Texture playerTex;
+    playerTex = graphicsHandler.getTextureInArray(0);
+    pc.setTexture(&playerTex);
+
+    handlePlayerMovement(pc);
     // TODO:
     // * Have player object & draw on screen - DONE
     // * Player object controllable

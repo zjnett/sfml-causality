@@ -36,7 +36,8 @@ public:
     void setStamina(double stamina, double newStaminaMax) { currentStamina = stamina; staminaMax = newStaminaMax; }
     void setMagic(double magic) { currentMagic = magic; }
     void setMagic(double magic, double newMagicMax) { currentMagic = magic; magicMax = newMagicMax; }
-
+    void setSpeed(double newSpeed) { speed = newSpeed; }
+    
     // Attribute getters
     std::string getName() { return name; }
     double getHealthMax() { return healthMax; }
@@ -45,7 +46,7 @@ public:
     double getCurrentHealth() { return currentHealth; }
     double getCurrentStamina() { return currentStamina; }
     double getCurrentMagic() { return currentMagic; }
-
+    double getSpeed() { return speed; }
 private:
     std::string name;
     double healthMax;
@@ -54,6 +55,7 @@ private:
     double currentHealth;
     double currentStamina;
     double currentMagic;
+    double speed;
 };
 
 #endif /* PLAYER_HPP */

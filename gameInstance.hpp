@@ -13,6 +13,7 @@
 #include "saveData.hpp"
 #include "Graphics.hpp"
 #include "Audio.hpp"
+#include "Input.hpp"
 
 class gameInstance {
 public:
@@ -25,6 +26,7 @@ public:
         pc.setHealth(10, 10);
         pc.setStamina(10, 10);
         pc.setMagic(0, 0); // player does not initially have magic
+        pc.setSpeed(5);
         pc.setSize(*(new sf::Vector2f(200, 200)));
         pc.setFillColor(sf::Color::White);
         pc.setPosition(HORIZONTAL_RESOLUTION / 2 - (pc.getSize().x / 2), VERTICAL_RESOLUTION / 2 - (pc.getSize().y / 2));
